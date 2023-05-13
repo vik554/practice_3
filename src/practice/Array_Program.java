@@ -5,6 +5,7 @@ public class Array_Program {
         Array_Program s1 = new Array_Program();
         s1.printarray();
         s1.frequencyofarray();
+        s1.largestelement();
     }
 
 
@@ -50,5 +51,20 @@ public class Array_Program {
             }
         }
         return frequencyArr;
+    }
+    public void largestelement(){
+        int max = 0;
+        int a[]={44,3,6,55,43,22};
+        for(int i = 0; i < a.length; i++)
+            max = a[0];
+
+        for(int i = 0; i < a.length; i++)
+        {
+            if(max < a[i])
+            {
+                max = a[i];
+            }
+        }
+        System.out.println("Maximum value in the array is:"+max);
     }
 }
