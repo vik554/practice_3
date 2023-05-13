@@ -7,6 +7,7 @@ public class Array_Program {
         s1.frequencyofarray();
         s1.largestelement();
         s1.smallestelement();
+        s1.even_positon();
     }
 
 
@@ -18,32 +19,28 @@ public class Array_Program {
 
         }
     }
-    public void frequencyofarray(){
-        int[] arr = { 1, 2, 3, 4, 3, 2, 1, 1, 3, 4, 5, 5, 5 };
+
+    public void frequencyofarray() {
+        int[] arr = {1, 2, 3, 4, 3, 2, 1, 1, 3, 4, 5, 5, 5};
 
         int[] frequencyArr = findFrequency(arr);
 
-        for (int i = 0; i < frequencyArr.length; i++)
-        {
+        for (int i = 0; i < frequencyArr.length; i++) {
             if (frequencyArr[i] > 0) {
                 System.out.println("Element " + (i + 1) + " occurs " + frequencyArr[i] + " times");
             }
         }
     }
 
-    public static int[] findFrequency(int[] arr)
-    {
+    public static int[] findFrequency(int[] arr) {
         int[] frequencyArr = new int[arr.length];
 
-        for (int i = 0; i < arr.length; i++)
-        {
+        for (int i = 0; i < arr.length; i++) {
             int count = 0;
 
-            if (frequencyArr[i] != -1)
-            {
+            if (frequencyArr[i] != -1) {
                 for (int j = i + 1; j < arr.length; j++) {
-                    if (arr[i] == arr[j])
-                    {
+                    if (arr[i] == arr[j]) {
                         count++;
                         frequencyArr[j] = -1;
                     }
@@ -53,34 +50,42 @@ public class Array_Program {
         }
         return frequencyArr;
     }
-    public void largestelement(){
+
+    public void largestelement() {
         int max = 0;
-        int a[]={44,3,6,55,43,22};
-        for(int i = 0; i < a.length; i++)
+        int a[] = {44, 3, 6, 55, 43, 22};
+        for (int i = 0; i < a.length; i++)
             max = a[0];
 
-        for(int i = 0; i < a.length; i++)
-        {
-            if(max < a[i])
-            {
+        for (int i = 0; i < a.length; i++) {
+            if (max < a[i]) {
                 max = a[i];
             }
         }
-        System.out.println("Maximum value in the array is:"+max);
+        System.out.println("Maximum value in the array is:" + max);
     }
-    public void smallestelement(){
+
+    public void smallestelement() {
         int min = 0;
-        int a[]={44,3,6,55,43,22};
-        for(int i = 0; i < a.length; i++)
+        int a[] = {44, 3, 6, 55, 43, 22};
+        for (int i = 0; i < a.length; i++)
             min = a[0];
 
-        for(int i = 0; i < a.length; i++)
-        {
-            if(min > a[i])
-            {
+        for (int i = 0; i < a.length; i++) {
+            if (min > a[i]) {
                 min = a[i];
             }
         }
-        System.out.println("Minimum value in the array is:"+min);
+        System.out.println("Minimum value in the array is:" + min);
+    }
+
+    public void even_positon() {
+        int[] arr = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+
+        System.out.println("Elements at even positions:");
+        for (int i = 1; i < arr.length; i += 2) {
+            System.out.println(arr[i]);
+
+        }
     }
 }
